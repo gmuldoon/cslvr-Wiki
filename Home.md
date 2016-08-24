@@ -1,4 +1,4 @@
-# cslvr : [c]ryospheric problem [s]o[lv]e[r]
+
 ## Description
 Built from elements of the [Var]iational [Gl]acier [S]imulator (VarGlaS) codes:
 
