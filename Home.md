@@ -18,6 +18,6 @@ and Dolfin-Adjoint:
 http://dolfin-adjoint-doc.readthedocs.org/en/latest/
 
 ## Get started
-Installation instructions and a quick start manual can be found in the sidebar
+Installation instructions and a quick start manual can be found in the sidebar.
 
 
