@@ -15,7 +15,7 @@ The dbm.rescale_field() function is used to determine the size of the mesh. It t
 The dbm.data['ref'][shf] function controls the size of the mesh over floating ice.
 
 ## Ice slopes
-The dbm.data['ref'][slp] is a limit in meters on the refinement of slopes. It can be used to limit the "pointiness" of mountains to make them more or less realistic.
+The dbm.data['ref'][slp] function puts a limit in meters on the refinement of slopes. It can be used to limit the "pointiness" of mountains to make them more or less realistic.
 
 #Define the domain
 This can be done in two ways in the existing code, at least in Antarctica.
