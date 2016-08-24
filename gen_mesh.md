@@ -9,7 +9,7 @@ Basal topography and surface velocity data is grabbed by this script to generate
 
 #Set the mesh size
 ## Grounded ice
-The dbm.rescale_field() function is used to determine the size of the mesh. It takes inputs umin and umax, which are sizes in meters indicating the smallest and largest boxes the mesh will create. The mesh resulting from running this script can be examined to check the appropriateness of these values for your problem.
+The ```bash dbm.rescale_field()``` function is used to determine the size of the mesh. It takes inputs umin and umax, which are sizes in meters indicating the smallest and largest boxes the mesh will create. The mesh resulting from running this script can be examined to check the appropriateness of these values for your problem.
 
 ##Floating Ice
 The dbm.data['ref'][shf] function controls the size of the mesh over floating ice.
@@ -27,7 +27,7 @@ This can be done in two ways in the existing code, at least in Antarctica.
 The code is available for either method. Be sure to comment out the method not in use.
 
 ##Basin domain
-The NASA-defined catchments are available [online here](http://icesat4.gsfc.nasa.gov/cryo_data/ant_grn_drainage_systems.php). They are called by number in the GetBasin() function in the gen_mesh.py script.
+The NASA-defined catchments are available online [here](http://icesat4.gsfc.nasa.gov/cryo_data/ant_grn_drainage_systems.php). They are called by number in the GetBasin() function in the gen_mesh.py script.
 
 ## Box domain
 Alternatively, a new contour can be drawn using coordinates for the corners of a box. This is available in the script as
