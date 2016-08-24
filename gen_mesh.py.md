@@ -38,7 +38,7 @@ The ```dbm.data['ref'][shf]``` function controls the size of the mesh over float
 The ```dbm.data['ref'][slp]``` function puts a limit in meters on the refinement of slopes. It can be used to limit the "pointiness" of mountains to make them more or less realistic.
 
 #Change topography or velocity boundaries
-By default, the model uses Bedmap2 and MEaSUREs InSAR velocities as boundary conditions. These are loaded by this script to generate them mesh. To change the input data for one of these fields, it is necessary to edit the lines
+By default, the model uses Bedmap2 and MEaSUREs InSAR velocities as boundary conditions for creating the mesh (however the data values themselves are not assigned to the mesh until the gen_vars.py script). To change the input for one of these fields, it is necessary to edit the lines
 ```bash
 measure = DataFactory.get_ant_measures(res=900)
 bedmap2 = DataFactory.get_bedmap2()
