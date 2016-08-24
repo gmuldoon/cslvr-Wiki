@@ -3,16 +3,6 @@ This script creates the finite element mesh for the model. It runs in serial and
 
 This script uses the DataFactory class to get the data. New data can be added to cslvr/cslvr/data_factory.py to be used in a new mesh. This script is also where the domain of the model is set.
 
-#Set the mesh size
-## Grounded ice
-The ```dbm.rescale_field()``` function is used to determine the size of the mesh. It takes inputs umin and umax, which are sizes in meters indicating the smallest and largest boxes the mesh will create. The mesh resulting from running this script can be examined to check the appropriateness of these values for your problem.
-
-##Floating Ice
-The ```dbm.data['ref'][shf]``` function controls the size of the mesh over floating ice.
-
-## Ice slopes
-The ```dbm.data['ref'][slp]``` function puts a limit in meters on the refinement of slopes. It can be used to limit the "pointiness" of mountains to make them more or less realistic.
-
 #Define the domain
 This can be done in two ways in the existing code, at least in Antarctica.
 
@@ -36,10 +26,23 @@ new_cont = array([[x1, y1],
 m.intersection(new_cont)   
 ```
 
+
+#Set the mesh size
+## Grounded ice
+The ```dbm.rescale_field()``` function is used to determine the size of the mesh. It takes inputs umin and umax, which are sizes in meters indicating the smallest and largest boxes the mesh will create. The mesh resulting from running this script can be examined to check the appropriateness of these values for your problem.
+
+##Floating Ice
+The ```dbm.data['ref'][shf]``` function controls the size of the mesh over floating ice.
+
+## Ice slopes
+The ```dbm.data['ref'][slp]``` function puts a limit in meters on the refinement of slopes. It can be used to limit the "pointiness" of mountains to make them more or less realistic.
+
 #Change topography or velocity boundaries
 By default, the model uses Bedmap2 and MEaSUREs InSAR velocities as boundary conditions. These are loaded by this script to generate them mesh. To change the input data for one of these fields, it is necessary to edit the lines
 ```bash
 measure = DataFactory.get_ant_measures(res=900)
 bedmap2 = DataFactory.get_bedmap2()
 ```
-Other options can be seen in cslvr/cslvr/data_factory.py. To use data not currently available in DataFactory, it's necessary to create a new entry in data_factory.py. It is best to use other entries in data_factory.py as a guide on how to do this. The new entry must include appropriate information for the new data's map projection, for example. See ```get_bedmap2()``` in  data_factory.py for an example entry.
+Other existing options can be seen in cslvr/cslvr/data_factory.py.
+
+To use data not currently available in DataFactory, it's necessary to create a new entry in data_factory.py. It is best to use other entries in data_factory.py as a guide on how to do this. The new entry must include appropriate information for the new data's map projection, for example. See ```get_bedmap2()``` in  data_factory.py for an example entry.
