@@ -6,12 +6,12 @@ There are four scripts used to run cslvr. These are found in cslvr/simulations/[
 
 The most important scripts are:
 
-1. gen_mesh.py -- This script puts the data into finite elements for a particular projection. This script is serial.
+1. **gen_mesh.py** -- This script puts the data into finite elements for a particular projection. This script is serial.
 
-2. gen_vars.py -- This script takes the "brick" mesh and puts data on the mesh to turn it into a realistic ice sheet. This script runs in parallel.
+2. **gen_vars.py** -- This script takes the "brick" mesh and puts data on the mesh to turn it into a realistic ice sheet. This script runs in parallel.
 
-3. gen_submeshes.py -- This script makes a few useful submeshes to expedite later calculations. This script is serial.
+3. **gen_submeshes.py** -- This script makes a few useful submeshes to expedite later calculations. This script is serial.
 
-4. data_assimilation.py -- This script evaluates the physics of the model and inverts for basal traction.
+4. **data_assimilation.py** -- This script evaluates the physics of the model and inverts for basal traction.
 
 
