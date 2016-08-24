@@ -2,7 +2,7 @@
 Much of the code has been documented using [Sphinx](http://www.sphinx-doc.org/en/stable/) which can be used to generate documentation by the user. Here I provide an introduction to the four basic run scripts and how they can be used to change parameters in the model. This is by no means an exhaustive guide.
 
 # Workflow
-There are four scripts used to run cslvr.
+There are four scripts used to run cslvr. These scripts must be customized for the domain and data of interest to you.
 
 These are found in cslvr/simulations/[Location]/data_assimilation/[AreaOfInterest] where Location is Greenland, Antarctica, or ISMIP test cases. AreaOfInterest specifies regional or continental-scale. Meshes for new areas of Interest can be added by the user.
 
