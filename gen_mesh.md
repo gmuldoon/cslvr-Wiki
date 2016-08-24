@@ -4,7 +4,7 @@ This script creates the finite element mesh for the model. It runs in serial and
 This script uses the DataFactory class to get the data. New data can be added to cslvr/cslvr/data_factory.py to be used in a new mesh. This script is also where the domain of the model is set.
 
 
-# Adding different data to DataFactory
+# Changing topography or velocity boundary conditions
 Basal topography and surface velocity data is grabbed by this script to generate them mesh. To swap out the basal topography, for example, to something new, it's necessary to create a new entry in cslvr/cslvr/data_factory.py. It is best to use other entries in data_factory.py as a guide on how to do this. The new entry must include appropriate information for the new data's map projection, for example. See get_bedmap2() in  data_factory.py for an example entry.
 
 #Setting the size of the mesh
@@ -25,7 +25,7 @@ The code is available for either method. Be sure to comment out the method not i
 The NASA-defined catchments are available [online here](http://icesat4.gsfc.nasa.gov/cryo_data/ant_grn_drainage_systems.php). They are called by number in the GetBasin() function in the gen_mesh.py script.
 
 ## Box domain
-Alternatively, a new contour can be drawn using coordinates of the corner of a box. This is available in the script as
+Alternatively, a new contour can be drawn using coordinates for the corners of a box. This is available in the script as
 ```bash
 new_cont = array([[x1, y1],
                   [x2, y1],
