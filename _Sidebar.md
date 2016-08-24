@@ -1,13 +1,13 @@
-+[Home](https://github.com/gmuldoon/cslvr/wiki)
+[Home](https://github.com/gmuldoon/cslvr/wiki)
 
-2.[Installation](https://github.com/gmuldoon/cslvr/wiki/Installation)
+[Installation](https://github.com/gmuldoon/cslvr/wiki/Installation)
 
-3.[Quick Start](https://github.com/gmuldoon/cslvr/wiki/Quick-Start)
+[Quick Start](https://github.com/gmuldoon/cslvr/wiki/Quick-Start)
 
-4.[Generate Meshes](https://github.com/gmuldoon/cslvr/wiki/gen_mesh)
+[Generate Meshes](https://github.com/gmuldoon/cslvr/wiki/gen_mesh)
 
-5.[Generate Variables](https://github.com/gmuldoon/cslvr/wiki/gen_mesh)
+[Generate Variables](https://github.com/gmuldoon/cslvr/wiki/gen_mesh)
 
-6.[Generate Submeshes](https://github.com/gmuldoon/cslvr/wiki/gen_mesh)
+[Generate Submeshes](https://github.com/gmuldoon/cslvr/wiki/gen_mesh)
 
-7.[Data Assimilation](https://github.com/gmuldoon/cslvr/wiki/gen_mesh)
+[Data Assimilation](https://github.com/gmuldoon/cslvr/wiki/gen_mesh)
