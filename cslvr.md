@@ -1,6 +1,7 @@
 
+
 ## Description
-Built from elements of the [Var]iational [Gl]acier [S]imulator (VarGlaS) codes:
+cslvr is the : [c]ryospheric problem [s]o[lv]e[r]. It is built from elements of the [Var]iational [Gl]acier [S]imulator (VarGlaS) codes:
 
 https://github.com/douglas-brinkerhoff/VarGlaS
 
