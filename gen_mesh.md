@@ -19,7 +19,9 @@ The dbm.data['ref'][slp] function puts a limit in meters on the refinement of sl
 
 #Define the domain
 This can be done in two ways in the existing code, at least in Antarctica.
+
 1. Use a pre-existing NASA catchment
+
 2. Draw a box around an area of interest.
 
 The code is available for either method. Be sure to comment out the method not in use.
