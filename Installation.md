@@ -1,5 +1,5 @@
 # Installation (verified with ubuntu 15.04) :
--------------------------------------------
+
 
 FEniCS 1.6 :
 
@@ -68,7 +68,7 @@ from cslvr import *
 ```
 
 # Data download :
----------------
+
 
 You may like to download some data and pre-made meshes.  To do this, go into the ``scripts/`` directory and run the ``download_*.py`` files there, dependending on your needs.
 
