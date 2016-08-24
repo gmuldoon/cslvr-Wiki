@@ -1,6 +1,5 @@
 # cslvr : [c]ryospheric problem [s]o[lv]e[r]
-=======
-
+## Description
 Built from elements of the [Var]iational [Gl]acier [S]imulator (VarGlaS) codes:
 
 https://github.com/douglas-brinkerhoff/VarGlaS
@@ -17,7 +16,7 @@ and Dolfin-Adjoint:
 
 http://dolfin-adjoint-doc.readthedocs.org/en/latest/
 
-## Installation instructions can be found in the sidebar
+## Get started
+Installation instructions and a quick start manual can be found in the sidebar
 
-## A quick start manual can be found in the sidebar
 
