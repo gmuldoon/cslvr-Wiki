@@ -1,3 +1,13 @@
+##### Table of Contents  
+[Overview](#overview)  
+[Define the Domain](#define-the-domain)  
+[Set the mesh size](#set-the-mesh-size)  
+[Change topography or velocity boundaries](#change-topography-or-velocity-boundaries)  
+[Change number of vertical layers](#change-number-of-vertical-layers)
+
+
+
+
 # Overview
 This script creates the finite element mesh for the model. Note different versions of this script may have alternate names, such as gen_thwaites_mesh.py or gen_thwaites_mesh_basin.py. 
 
@@ -56,11 +66,11 @@ Other existing options can be seen in cslvr/data_factory.py.
 
 To use data not currently available in DataFactory, it's necessary to create a new entry in data_factory.py. It is best to use other entries in data_factory.py as a guide on how to do this. The new entry must include appropriate information for the new data's map projection, for example. See ```get_bedmap2()``` in  data_factory.py for an example entry.
 
-## Change number of vertical layers
-extrude in gen_mesh: n_layers = 10 (can be changed)
+# Change number of vertical layers
+The number of vertical layers is defined in this script in the call to MeshGenerator's ```extrude```:
+``` m.extrude(h=100000, n_layers=5) ```
 
-##Notes
-mask is the area not kept
+You may want to adjust n_layers to, for example, have more vertical layers in the model for better resolution.
 
-Mesh Generator -- creates outline of AIS
-
+<!--- ##Notes
+mask is the area not kept--->

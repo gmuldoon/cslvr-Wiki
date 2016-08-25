@@ -1,3 +1,8 @@
+##### Table of Contents  
+[Overview](#overview)  
+[Change input data](#change-input-data)  
+[Stitch together data](#stitch-together-data)
+
 ## Overview
 
 This script puts data on the previously-generated mesh, in effect changing it from a brick into a relatic ice sheet. The data includes surface and bed geometries, ice temperature and velocity, subglacial geothermal flux, surface accumulation, etc. This is the place to change the input data fields if desired. 

@@ -1,7 +1,14 @@
+##### Table of Contents  
+[Overview](#overview)  
+[Solver method](#solver-method)  
+[Restart](#restart)  
+[Assimilating for enhancement factor, E](#assimilating-for-enhancement-factor-e)     
+[Balance velocity smoothing](#balance-velocity-smoothing)
+
 # Overview
 This script is where the model physics are evaluated and the inversion performed. It can be run in parallel.
 
-##  Solver method
+#  Solver method
 [IPOpt](http://www.coin-or.org/Ipopt/documentation/) is the preferred method for solving the nonlinear optimization in data_assimilation.py. However, not everyone has it available. If you are missing IPOpt, change 'method' in ```wop_kwargs``` and ```uop_kwargs``` to the [Limited-memory BFGS algorithm] (https://en.wikipedia.org/wiki/Limited-memory_BFGS) like so:
 
 ```
@@ -19,7 +26,7 @@ uop_kwargs = {'control'             : d3model.beta,
               'adj_callback'        : None,
               'post_adj_callback'   : adj_post_cb_ftn}
 ```
-## Restart
+# Restart
 There are a few instances in this script where restart functionality has been hard coded, but commented out:
 ```
  #frstrt = HDF5File(mpi_comm_world(), out_dir + '01/inverted.h5', 'r') 
@@ -34,8 +41,8 @@ There are a few instances in this script where restart functionality has been ha
 
 These restarts can be used to continue the script from its last checkpoint in order to save time during testing or to recover from a truncated run. As the script runs, it creates checkpoint directories in out_dir, e.g. '01' in this example. If out_dir + '01/inverted.h5' exists, it is possible to restart from that point by uncommenting this restart code.
 
-## Assimilating for Enhancement factor, _E_
-### Explanation
+# Assimilating for Enhancement factor, _E_
+## Explanation
 It is possible (though untested) that alternately inverting for the basal traction, β, under grounded ice and the ice flow enhancement factor, _E_, over ice shelves, will improve the inversion. This can be done through manual iteration of the code described below.
 
 Glen's flow law states that:
@@ -53,7 +60,7 @@ where _A0_ is a prefactor, _T_ is temperature, _Q_ is activation energy for cree
 _E_ is known as an enhancement factor.
 
 
-### Method
+## Method
 Because there is no basal traction, _β_, over the ice shelves, the inversion for _β_ cannot be performed there. However, an inversion for _E_ can be performed over the ice shelves. It's therefore possible to improve the overall inversion by combining the two in tandem:
 
 1. Optimize J(u,β) so that _β_ is smooth and surface velocity, _u_, matches observations. 
@@ -111,7 +118,7 @@ This can be achieved manually in the following way:
                   'post_adj_callback'   : adj_post_cb_ftn}
     ``` 
 
-## Balance velocity smoothing
+# Balance velocity smoothing
 The balance velocity function includes an input parameter, κ, which is the surface smoothing raduys in units of ice thickness. A typical value is κ = 0.5, however this is a tunable parameter. It can be edited in the following line:
 
 ``` bv = BalanceVelocity(bedmodel, kappa=5.0) ```
