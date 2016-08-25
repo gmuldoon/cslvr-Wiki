@@ -16,10 +16,10 @@ This can be done in two ways in the existing code, at least in Antarctica.
 
 The code is available for either method. Be sure to comment out the method not in use.
 
-##Basin domain
+##1. Basin domain
 The NASA-defined catchments are available online [here](http://icesat4.gsfc.nasa.gov/cryo_data/ant_grn_drainage_systems.php). They are called by number in the ```GetBasin()``` function in the gen_mesh.py script.
 
-## Box domain
+##2. Box domain
 Alternatively, a new contour can be drawn using coordinates for the corners of a box. This is available in the script as
 ```bash
 new_cont = array([[x1, y1],
@@ -43,7 +43,8 @@ The ```dbm.data['ref'][shf]``` function controls the size of the mesh over float
 ## Ice slopes
 The ```dbm.data['ref'][slp]``` function puts a limit in meters on the refinement of slopes. It can be used to limit the "pointiness" of mountains to make them more or less realistic.
 
-
+## Memory
+Depending on the size of the mesh (i.e. the number of vertices, etc.), creating the mesh may require a considerable amount of memory. If running this script results in memory issues, consider running on a node with more memory or reducing the complexity or size of the mesh.
 
 #Change topography or velocity boundaries
 By default, the model uses Bedmap2 and MEaSUREs InSAR velocities as boundary conditions. These are loaded by this script to generate them mesh. To change the input data for one of these fields, it is necessary to edit the lines
@@ -54,3 +55,12 @@ bedmap2 = DataFactory.get_bedmap2()
 Other existing options can be seen in cslvr/data_factory.py.
 
 To use data not currently available in DataFactory, it's necessary to create a new entry in data_factory.py. It is best to use other entries in data_factory.py as a guide on how to do this. The new entry must include appropriate information for the new data's map projection, for example. See ```get_bedmap2()``` in  data_factory.py for an example entry.
+
+## Change number of vertical layers
+extrude in gen_mesh: n_layers = 10 (can be changed)
+
+##Notes
+mask is the area not kept
+
+Mesh Generator -- creates outline of AIS
+

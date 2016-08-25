@@ -19,11 +19,11 @@ Depending on what you all the new data, several parts of this script may need to
 
 3. Use get_expression to extract the data values:
 
-   ``` q_geo_sch = sch.get_expression("q_geo_schroed", near=False)```
+   ``` q_geo = sch.get_expression("q_geo_schroed", near=False)```
    
 4. Initialize the values:
 
-   ``` model.init_q_geo(q_geo_sch) ```
+   ``` model.init_q_geo(q_geo) ```
    
 5. Add it to the list of variables to save:
 
@@ -31,7 +31,7 @@ Depending on what you all the new data, several parts of this script may need to
    lst = [model.S,
           model.B,
           model.mask,
-          model.q_geo_sch,
+          model.q_geo,
           model.T_surface,
           model.adot,
           model.u_ob,
@@ -40,3 +40,7 @@ Depending on what you all the new data, several parts of this script may need to
           model.lat_mask]
    ```
 
+Note: It's easiest to not change the name of the field in the list. If the name is changed, it needs to be updated during initialization in data_assimilation.py and potentially gen_submeshes.py depending on which field was changed. 
+
+## Stitch together data
+geothermal or for scaling a param: bedmap1['new_gf'] = gfhsr*n
